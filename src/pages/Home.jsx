@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Navbar from '../components/generalComponents/Navbar'
 import {useDispatch,useSelector} from 'react-redux'
 import {increment,decrement,changeName} from '../slices/CounterSlice'
+import pic1 from '../images/muruga.png'
 
 
 function Home() {
@@ -39,6 +40,7 @@ function Home() {
           <button onClick={()=>dispatch(increment(userInput))}>increment</button>
           <button onClick={()=>dispatch(decrement())}>decriment</button>
           <button onClick={()=>dispatch(changeName(name))}>change</button>
+          <img src={pic1} alt="" />
 
     </div>
   )
