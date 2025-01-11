@@ -8,34 +8,42 @@ import Contact from './pages/Contact'
 import Services from './pages/Services'
 import Products from './pages/Products'
 import ProductDetail from './pages/ProductDetail'
+import UserLayout from './layout/UserLayout'
 
 const router = createBrowserRouter([
-  
   {
     path:'/',
-    element:<Home/>
+    element:<UserLayout/>,
+    children:[
+      {
+        index:true,
+        element:<Home/>
+      },
+      {
+        path:'/contact',
+        element:<Contact/>
+      },
+      {
+        path:'/services',
+        element:<Services/>
+      },
+      {
+        path:'/about',
+        element:<About/>
+      }
+      ,
+      {
+        path:'/products',
+        element:<Products/>
+      },
+      {
+        path:':string',
+        element:<ProductDetail/>
+      }
+    ]
   },
-  {
-    path:'/contact',
-    element:<Contact/>
-  },
-  {
-    path:'/services',
-    element:<Services/>
-  },
-  {
-    path:'/about',
-    element:<About/>
-  }
-  ,
-  {
-    path:'/products',
-    element:<Products/>
-  },
-  {
-    path:':string',
-    element:<ProductDetail/>
-  }
+  
+
 
 ])
 
